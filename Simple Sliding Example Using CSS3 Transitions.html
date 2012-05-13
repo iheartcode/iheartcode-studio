@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!--
+
+        NOTE: This page was written as a simple example of using 
+        CSS3 transitions to create a left/right sliding panel 
+        effect. I wouldn't actually recommend writing the JS code 
+        this way - I just didn't want to obscure the lesson with 
+        fancy JavaScript. Luv and kisses - jstark
+
+    -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple Sliding Example Using CSS3 Transitions</title>
+        <style>
+
+            /* GENERAL FORMATTING STUFF THAT HAS NOTHING REALLY TO DO WITH SLIDING */
+
+            * {
+                color: black;
+                font-family: Arial, "MS Trebuchet", sans-serif;
+                font-size: 22px;
+                font-weight: bold;
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                text-shadow: white 0 1px 0;
+            }
+            body {
+                background: #333;
+                text-align: center;
+            }
+            body > #container {
+                background: white;
+                height: 460px;
+                margin: 20px auto;
+                position: relative;
+                width: 320px;
+                /* Uncomment the following line to remove horizontal scroll bars. */
+                /*overflow-x: hidden;*/
+            }
+            body > #container > div {
+                background: white;
+                height: 460px;
+                opacity: .75;
+                position: absolute;
+                width: 320px;
+            }
+            body > #container > div > h1 {
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#AAA));
+                padding: 10px;
+            }
+            body > #container > div > p {
+                font-size: 14px;
+                padding: 10px;
+            }
+            body > #container > div > p > a {
+                -webkit-border-radius: 8px;
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#AAA));
+                border: 3px solid #999;
+                display: block;
+                font-size: 14px;
+                padding: 10px;
+            }
+            
+            /* 
+             * MAGIC TRANSITION STUFF FOLLOWS BELOW
+             */
+            
+            /* Set the initial positions */
+            #home {
+                -webkit-transform: translateX(0);
+            }
+            #settings {
+                -webkit-transform: translateX(100%);
+            }
+            
+            /* Settings common to both panels */
+            body > #container > div.in, 
+            body > #container > div.out {
+                -webkit-transition-duration: 350ms;
+                -webkit-transition-property: webkitTransform;
+            }
+
+            /* Define the animation names for each possible state */
+            body > #container > div.slide.left.in {
+                -webkit-transform: translateX(0);
+            }
+            body > #container > div.slide.left.out {
+                -webkit-transform: translateX(-100%);
+            }
+            body > #container > div.slide.right.in {
+                -webkit-transform: translateX(0);
+            }
+            body > #container > div.slide.right.out {
+                -webkit-transform: translateX(100%);
+            }
+            
+        </style>
+        <script>
+            function goTo(targetPanelId) {
+                var home = document.getElementById('home');
+                var settings = document.getElementById('settings');
+                if (targetPanelId === 'settings') {
+                    home.className = 'slide left out';
+                    settings.className = 'slide left in';                    
+                } else {
+                    home.className = 'slide right in';
+                    settings.className = 'slide right out';                    
+                }
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="home">
+                <h1>Home</h1>
+                <p><a href="#settings" onclick="goTo('settings');return false">Go to Settings</a></p>
+                <p>Transition Example</p>
+                <p>When a button is clicked/tapped, the JavaScript merely assigns class names to the panels. The CSS then jumps into action based on the new class names.</p>
+            </div>
+            <div id="settings">
+                <h1>Settings</h1>
+                <p><a href="#home" onclick="goTo('home');return false">Go to Home</a></p>
+            </div>
+        </div>
+    </body>
+</html>

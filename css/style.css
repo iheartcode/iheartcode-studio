@@ -83,12 +83,13 @@ td { vertical-align: top; }
    =================== */
 
 
-#header-container,
-#footer-container{
+#header-container{
     background: transparent;
 }
 
-
+#footer-container{
+    background: transparent;
+}
 
 /* ==============
     MOBILE: Menu
@@ -99,7 +100,7 @@ nav a{
 	margin-bottom:10px;
 	padding:15px 0;
 
-	background:#36280D;
+	background: #36280D;
 	color:white;
 
 	text-align:center;
@@ -114,8 +115,12 @@ nav a:hover, nav a:visited{
 	color:white;
 }
 
-.options, .description {
-    display: block;
+nav a:hover{
+    opacity: 0.9;
+}
+
+.options, .description ul {
+    display: inline;
     list-style: none;
     list-style-image: none;
     margin: auto;
@@ -153,7 +158,8 @@ nav a:hover, nav a:visited{
    ============== */
 
 #main{
-	padding:30px 0;
+	padding:10px 0;
+	border-top: 4px solid #aaa;
 }
 
 #main article h1{
@@ -168,14 +174,35 @@ nav a:hover, nav a:visited{
 
 #footer-container footer{
 	padding:20px 0;
+	
 }
 
+#footer-container footer a{
+    color: #36280D;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+#footer-container footer a:hover{
+    color: #36280D;
+}
+
+#footer-container footer a:visited{
+    color: #36280D;
+}
 header span{
     display: inline-block;
     text-align: center;
     font-size: 1.6em;
-    margin: 1em;
-    font-style: ALL;
+    margin: 0.5em;
+    margin-top: -1em;
+    
+    font-style: italic;
+    text-shadow: 0 0 1px #000;
+}
+
+#title{
+	margin-bottom: 4px;
 }
 
 /* ===============
@@ -191,6 +218,7 @@ header span{
 
 body{
     font-family: 'Lato', sans-serif;
+    color: #36280D;
     background: transparent url('../img/bg.png') repeat scroll 0 0;
 }
 
@@ -221,6 +249,14 @@ article header *{
     INTERMEDIATE: Menu
    ==================== */
 	
+	header span{
+	    margin: 1em;
+    }
+    
+    #main{
+        border: none;
+    }
+    
 	nav a{
 		float:right;
 		width:27%;
@@ -269,6 +305,15 @@ article header *{
     .options li:first-child { padding-right:10px; margin-right: 3%; }
     .options li:last-child { padding-left:10px; margin-left: 3%;}
 
+    .options a:hover{
+        opacity: 0.6;
+        background: #111;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+
+/*    .options li:first-child a:hover{ border-right: 5px solid white; }
+    .options li:last-child a:hover{ border-left: 5px solid white; } */
 
     .description{
         display:block;
@@ -276,12 +321,6 @@ article header *{
     
     .description ul{
         float: left;
-    }
-    
-    .options a:hover{
-        opacity: 0.6;
-        background: #111;
-        font-weight: bold;
     }
     
 /* ========================
@@ -323,6 +362,7 @@ article header *{
 	nav{
 		float:right;
 		width:50%;
+		margin-left:-40%;
 	}
 
 /* ============
