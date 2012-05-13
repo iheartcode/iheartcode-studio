@@ -14,9 +14,9 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
 ::-moz-selection { background: #a157fe; color: #fff; text-shadow: none; }
 ::selection { background: #a157fe; color: #fff; text-shadow: none; }
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: #fff; }
+a:visited { color: #fff; }
+a:hover { color: #fff; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -175,11 +175,11 @@ header span{
     text-align: center;
     font-size: 1.6em;
     margin: 1em;
-    font-style: italic;
+    font-style: ALL;
 }
 
 /* ===============
-    ALL: IE Fixes
+    italic: IE Fixes
    =============== */
 
 .ie7 #title{ padding-top:20px; }
