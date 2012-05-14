@@ -98,14 +98,14 @@ td { vertical-align: top; }
 nav a{
 	display:block;
 	margin-bottom:10px;
-	padding:15px 0;
+	padding:12px 0;
 
 	background: #36280D;
 	color:white;
 
 	text-align:center;
 	text-decoration:none;
-	font-size: 110%;
+	font-size: 115%;
 	font-weight:bold;
 	
 	border-radius: 3px;
@@ -117,31 +117,38 @@ nav a:hover, nav a:visited{
 
 nav a:hover{
     opacity: 0.9;
+	-webkit-box-shadow:0 1px 4px #777;
+   -moz-box-shadow:0 1px 4px #777;
+        box-shadow:0 1px 4px #777;
+
+}
+
+nav a:active{
+    opacity: 1;
+    background-color: #000;
 }
 
 .options, .description ul {
-    display: inline;
     list-style: none;
     list-style-image: none;
-    margin: auto;
     padding: 0;
-    width: 100%;
 }
 
 
-.options li{
+.options a{
 	display:block;
-	margin:10px;
+	margin:2.5%;
 
 	color:white;
 	text-align:center;
+	text-decoration:none;
     
 	border-radius: 3px;
 }
 
-.options a{
+.options li{
     display: block;
-	text-decoration:none;
+	
 	padding: 24px;
 	font-size: 200%;
 }
@@ -150,8 +157,28 @@ nav a:hover{
 	color:white;
 }
 
-.options li:first-child { background-color: #b20d1d; }
-.options li:last-child  { background-color: #249a0b; }
+.options a:active li{
+    background: #111;
+}
+
+
+.options a:first-child { background-color: #b20d1d; }
+.options a:last-child  { background-color: #249a0b; }
+
+.description ul{
+    display: block;
+    margin: 0 2.5%;
+    font-size: 120%;
+    width: 45%;
+    font-weight:bold;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+.description ul:first-child li{
+    text-align: right;
+}
+
 
 /* ==============
     MOBILE: Main
@@ -263,7 +290,7 @@ article header *{
 		float:right;
 		width:27%;
 		margin:3% 1.7%;
-		padding: 2.5% 2%;
+		padding: 2% 1.5%;
 		margin-bottom:0;
 	}
 	
@@ -278,11 +305,11 @@ article header *{
 	    margin:auto;
     }
     
-    .options a{
+    .options li{
 	    display: block;
 	}
 	
-	.options li{
+	.options a{
 	    display: inline-block;
 	    width: 43%;
 	    padding-top: 20%;
@@ -294,27 +321,34 @@ article header *{
 	}
 	
 	.options *{
-		-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
+		-webkit-transition: all .2s ease-out;
+	   -moz-transition: all .2s ease-out;
+	    -ms-transition: all .2s ease-out;
+	     -o-transition: all .2s ease-out;
+	        transition: all .2s ease-out;
 	}
 
-    .options li:first-child a{ text-align: right; }
-    .options li:last-child a{ text-align: left; }
+    .options a:first-child li{ text-align: right; }
+    .options a:last-child li{ text-align: left; }
 
-    .options li:first-child { padding-right:10px; margin-right: 3%; }
-    .options li:last-child { padding-left:10px; margin-left: 3%;}
+    .options a:first-child { padding-right:10px; margin-right: 3%; }
+    .options a:last-child { padding-left:10px; margin-left: 3%;}
 
-    .options li:hover a{
+    .options a:hover li{
         opacity: 0.6;
         background: #111;
         font-weight: bold;
         border-radius: 3px;
     }
 
-
+    .options a:active{
+        background: #111;
+		-webkit-transition: none;
+	   -moz-transition: none;
+	    -ms-transition: none;
+	     -o-transition: none;
+	        transition: none;
+    }
 
 /*    .options li:first-child a:hover{ border-right: 5px solid white; }
     .options li:last-child a:hover{ border-left: 5px solid white; } */
